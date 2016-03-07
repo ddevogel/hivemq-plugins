@@ -1,1 +1,2 @@
 com.artisan.hivemq.plugin.AuthenticationPluginModule
+com.artisan.hivemq.plugin.SystemModule
