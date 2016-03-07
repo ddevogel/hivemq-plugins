@@ -11,14 +11,14 @@ import javax.inject.Inject;
 public class AuthenticationPluginEntryPoint extends PluginEntryPoint {
 
     private final AuthenticationCallback authCallback;
-    private final AddSubscriptionOnClientConnect addSubscriptionOnClientConnect;
+    //private final AddSubscriptionOnClientConnect addSubscriptionOnClientConnect;
 
     @Inject
     public AuthenticationPluginEntryPoint(
             final AuthenticationCallback authCallback,
             final AddSubscriptionOnClientConnect addSubscriptionOnClientConnect){
         this.authCallback = authCallback;
-        this.addSubscriptionOnClientConnect = addSubscriptionOnClientConnect;
+        //this.addSubscriptionOnClientConnect = addSubscriptionOnClientConnect;
     }
 
     /**
@@ -29,6 +29,6 @@ public class AuthenticationPluginEntryPoint extends PluginEntryPoint {
     public void postConstruct() {
         CallbackRegistry callbackRegistry = getCallbackRegistry();
         callbackRegistry.addCallback(authCallback);
-        callbackRegistry.addCallback(addSubscriptionOnClientConnect);
+        //callbackRegistry.addCallback(addSubscriptionOnClientConnect);
     }
 }
