@@ -19,11 +19,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>hivemq-hello-world-plugin</groupId>
-    <artifactId>hivemq-hello-world-plugin</artifactId>
+    <groupId>hivemq-plugins</groupId>
+    <artifactId>hivemq-plugins</artifactId>
     <version>3.0</version>
 
-    <description>HiveMQ Hello World Plugin - a reference for all plugin developer</description>
+    <description>HiveMQ Plugins</description>
 
     <dependencies>
         <dependency>
@@ -115,7 +115,8 @@
                                     <goal>hivemq</goal>
                                 </goals>
                                 <configuration>
-                                    <hiveMQDir>/home/david/_code/hivemq-3.1.0</hiveMQDir>
+                                    <hiveMQDir>C:\_devtools\hivemq\hivemq-3.0.0</hiveMQDir>
+                                    <!--<hiveMQDir>/home/david/_code/hivemq-3.1.0</hiveMQDir>-->
                                     <debugMode>SERVER</debugMode>
                                 </configuration>
                             </execution>
