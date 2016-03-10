@@ -1,9 +1,6 @@
 package com.artisan.hivemq.plugin;
 
-import com.artisan.hivemq.callbacks.ClientConnect;
-import com.artisan.hivemq.callbacks.ClientDisconnect;
-import com.artisan.hivemq.callbacks.HiveMQStart;
-import com.artisan.hivemq.callbacks.SimpleScheduledCallback;
+import com.artisan.hivemq.callbacks.*;
 import com.hivemq.spi.PluginEntryPoint;
 import com.hivemq.spi.callback.registry.CallbackRegistry;
 import org.slf4j.Logger;
@@ -17,6 +14,7 @@ public class SystemEntryPoint extends PluginEntryPoint {
 
     private final ClientConnect clientConnect;
     private final ClientDisconnect clientDisconnect;
+    private final PublishReceived publishReceived;
     private final SimpleScheduledCallback simpleScheduledCallback;
     private final HiveMQStart hiveMQStart;
 
@@ -24,10 +22,12 @@ public class SystemEntryPoint extends PluginEntryPoint {
     public SystemEntryPoint(
             final ClientConnect clientConnect,
             final ClientDisconnect clientDisconnect,
+            final PublishReceived publishReceived,
             final SimpleScheduledCallback simpleScheduledCallback,
             final HiveMQStart hiveMQStart){
         this.clientConnect = clientConnect;
         this.clientDisconnect = clientDisconnect;
+        this.publishReceived = publishReceived;
         this.simpleScheduledCallback = simpleScheduledCallback;
         this.hiveMQStart = hiveMQStart;
     }
@@ -42,6 +42,7 @@ public class SystemEntryPoint extends PluginEntryPoint {
         callbackRegistry.addCallback(hiveMQStart);
         callbackRegistry.addCallback(clientConnect);
         callbackRegistry.addCallback(clientDisconnect);
+        callbackRegistry.addCallback(publishReceived);
         callbackRegistry.addCallback(simpleScheduledCallback);
     }
 
