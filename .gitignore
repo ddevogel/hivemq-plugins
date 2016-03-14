@@ -1,3 +1,4 @@
 /target/
 /.idea/
 /hivemq-plugins.iml
+/dependency-reduced-pom.xml
