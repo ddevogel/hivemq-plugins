@@ -16,6 +16,7 @@
 
 package com.artisan.hivemq.callbacks;
 
+import com.hivemq.spi.aop.cache.Cached;
 import com.hivemq.spi.callback.CallbackPriority;
 import com.hivemq.spi.callback.exception.AuthenticationException;
 import com.hivemq.spi.callback.security.OnAuthenticationCallback;
@@ -35,6 +36,7 @@ import org.slf4j.LoggerFactory;
 import javax.inject.Inject;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author Dominik Obermaier
@@ -60,6 +62,7 @@ public class AuthenticationCallback implements OnAuthenticationCallback {
     }
 
     @Override
+    @Cached(timeToLive = 300, timeUnit = TimeUnit.SECONDS)
     public Boolean checkCredentials(final ClientCredentialsData clientCredentialsData) throws AuthenticationException {
 
         /*TODO: In a production ready plugin you should cache here if possible!!

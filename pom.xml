@@ -115,8 +115,8 @@
                                     <goal>hivemq</goal>
                                 </goals>
                                 <configuration>
-                                    <hiveMQDir>C:\_devtools\hivemq\hivemq-3.0.0</hiveMQDir>
-                                    <!--<hiveMQDir>/home/david/_code/hivemq-3.1.0</hiveMQDir>-->
+                                    <!--<hiveMQDir>C:\_devtools\hivemq\hivemq-3.0.0</hiveMQDir>-->
+                                    <hiveMQDir>/home/david/_code/hivemq-3.1.0</hiveMQDir>
                                     <debugMode>SERVER</debugMode>
                                 </configuration>
                             </execution>

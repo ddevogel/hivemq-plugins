@@ -29,7 +29,7 @@ public class SimpleScheduledCallback implements ScheduledCallback {
 
     @Override
     public void execute() {
-        log.info("Scheduled Callback is doing maintenance!");
+        //log.info("Scheduled Callback is doing maintenance!");
     }
 
     @Override
